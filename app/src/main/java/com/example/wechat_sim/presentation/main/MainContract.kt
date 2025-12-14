@@ -1,7 +1,7 @@
-package com.example.wechat_sim.mvp.main
+package com.example.wechat_sim.presentation.main
 
-import com.example.wechat_sim.mvp.BasePresenter
-import com.example.wechat_sim.mvp.BaseView
+import com.example.wechat_sim.presentation.BasePresenter
+import com.example.wechat_sim.presentation.BaseView
 
 interface MainContract {
 

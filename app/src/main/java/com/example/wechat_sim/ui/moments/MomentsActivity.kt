@@ -39,7 +39,7 @@ import androidx.compose.ui.window.DialogProperties
 import android.graphics.BitmapFactory
 import java.io.IOException
 import com.example.wechat_sim.model.*
-import com.example.wechat_sim.mvp.moments.*
+import com.example.wechat_sim.presentation.moments.*
 import com.example.wechat_sim.repository.DataRepository
 import com.example.wechat_sim.ui.theme.FakeWeChatTheme
 import com.example.wechat_sim.ui.contactdetails.ContactDetailsActivity

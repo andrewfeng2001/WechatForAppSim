@@ -22,8 +22,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.wechat_sim.mvp.main.MainContract
-import com.example.wechat_sim.mvp.main.MainPresenter
+import com.example.wechat_sim.presentation.main.MainContract
+import com.example.wechat_sim.presentation.main.MainPresenter
 import com.example.wechat_sim.repository.DataRepository
 import com.example.wechat_sim.ui.theme.FakeWeChatTheme
 import com.example.wechat_sim.ui.chat.ChatTab

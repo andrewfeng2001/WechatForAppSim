@@ -1,9 +1,9 @@
-package com.example.wechat_sim.mvp.search
+package com.example.wechat_sim.presentation.search
 
 import com.example.wechat_sim.model.Contact
 import com.example.wechat_sim.model.ChatRoom
-import com.example.wechat_sim.mvp.BaseView
-import com.example.wechat_sim.mvp.BasePresenter
+import com.example.wechat_sim.presentation.BaseView
+import com.example.wechat_sim.presentation.BasePresenter
 
 // 搜索结果的封装类
 data class SearchResult(

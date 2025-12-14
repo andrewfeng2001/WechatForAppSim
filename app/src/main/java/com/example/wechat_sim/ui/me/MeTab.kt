@@ -25,9 +25,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.wechat_sim.model.Contact
-import com.example.wechat_sim.mvp.me.MeContract
-import com.example.wechat_sim.mvp.me.MePresenter
-import com.example.wechat_sim.mvp.me.MenuItem
+import com.example.wechat_sim.presentation.me.MeContract
+import com.example.wechat_sim.presentation.me.MePresenter
+import com.example.wechat_sim.presentation.me.MenuItem
 import com.example.wechat_sim.repository.DataRepository
 
 @OptIn(ExperimentalMaterial3Api::class)

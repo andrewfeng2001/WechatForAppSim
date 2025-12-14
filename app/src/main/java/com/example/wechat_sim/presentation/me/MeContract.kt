@@ -1,8 +1,8 @@
-package com.example.wechat_sim.mvp.me
+package com.example.wechat_sim.presentation.me
 
 import com.example.wechat_sim.model.Contact
-import com.example.wechat_sim.mvp.BasePresenter
-import com.example.wechat_sim.mvp.BaseView
+import com.example.wechat_sim.presentation.BasePresenter
+import com.example.wechat_sim.presentation.BaseView
 
 interface MeContract {
 

@@ -1,4 +1,4 @@
-package com.example.wechat_sim.mvp.moments
+package com.example.wechat_sim.presentation.moments
 
 import com.example.wechat_sim.repository.DataRepository
 import com.example.wechat_sim.model.Comment

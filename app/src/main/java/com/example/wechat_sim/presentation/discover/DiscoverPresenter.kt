@@ -1,4 +1,4 @@
-package com.example.wechat_sim.mvp.discover
+package com.example.wechat_sim.presentation.discover
 
 import com.example.wechat_sim.model.Contact
 import com.example.wechat_sim.model.MomentsPost

@@ -24,9 +24,9 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.example.wechat_sim.mvp.chat.ChatContract
-import com.example.wechat_sim.mvp.chat.ChatListItem
-import com.example.wechat_sim.mvp.chat.ChatPresenter
+import com.example.wechat_sim.presentation.chat.ChatContract
+import com.example.wechat_sim.presentation.chat.ChatListItem
+import com.example.wechat_sim.presentation.chat.ChatPresenter
 import com.example.wechat_sim.repository.DataRepository
 import com.example.wechat_sim.ui.chatdetails.ChatDetailsActivity
 

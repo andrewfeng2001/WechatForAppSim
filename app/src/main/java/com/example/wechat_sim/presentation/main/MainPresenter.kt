@@ -1,4 +1,4 @@
-package com.example.wechat_sim.mvp.main
+package com.example.wechat_sim.presentation.main
 
 import com.example.wechat_sim.repository.DataRepository
 import kotlinx.coroutines.CoroutineScope

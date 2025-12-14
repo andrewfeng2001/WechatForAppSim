@@ -1,4 +1,4 @@
-package com.example.wechat_sim.utils
+package com.example.wechat_sim.common.utils
 
 import android.content.Context
 import com.example.wechat_sim.repository.DataRepository

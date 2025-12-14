@@ -1,9 +1,9 @@
-package com.example.wechat_sim.mvp.moments
+package com.example.wechat_sim.presentation.moments
 
 import com.example.wechat_sim.model.MomentsPost
 import com.example.wechat_sim.model.Contact
-import com.example.wechat_sim.mvp.BaseView
-import com.example.wechat_sim.mvp.BasePresenter
+import com.example.wechat_sim.presentation.BaseView
+import com.example.wechat_sim.presentation.BasePresenter
 
 interface MomentsContract {
     interface View : BaseView {

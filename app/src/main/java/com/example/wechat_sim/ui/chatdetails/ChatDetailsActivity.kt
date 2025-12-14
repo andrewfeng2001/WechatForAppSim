@@ -39,9 +39,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.wechat_sim.model.Contact
-import com.example.wechat_sim.mvp.chatdetails.ChatDetailsContract
-import com.example.wechat_sim.mvp.chatdetails.ChatDetailsPresenter
-import com.example.wechat_sim.mvp.chatdetails.ChatMessageItem
+import com.example.wechat_sim.presentation.chatdetails.ChatDetailsContract
+import com.example.wechat_sim.presentation.chatdetails.ChatDetailsPresenter
+import com.example.wechat_sim.presentation.chatdetails.ChatMessageItem
 import com.example.wechat_sim.repository.DataRepository
 import com.example.wechat_sim.ui.theme.FakeWeChatTheme
 import com.example.wechat_sim.ui.contactdetails.ContactDetailsActivity

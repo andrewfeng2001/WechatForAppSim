@@ -1,10 +1,10 @@
-package com.example.wechat_sim.mvp.chat
+package com.example.wechat_sim.presentation.chat
 
 import com.example.wechat_sim.model.ChatRoom
 import com.example.wechat_sim.model.Contact
 import com.example.wechat_sim.model.Message
-import com.example.wechat_sim.mvp.BasePresenter
-import com.example.wechat_sim.mvp.BaseView
+import com.example.wechat_sim.presentation.BasePresenter
+import com.example.wechat_sim.presentation.BaseView
 
 interface ChatContract {
 

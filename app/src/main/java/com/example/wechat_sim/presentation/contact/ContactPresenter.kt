@@ -1,4 +1,4 @@
-package com.example.wechat_sim.mvp.contact
+package com.example.wechat_sim.presentation.contact
 
 import com.example.wechat_sim.model.Contact
 import com.example.wechat_sim.repository.DataRepository

@@ -1,4 +1,4 @@
-package com.example.wechat_sim.mvp
+package com.example.wechat_sim.presentation
 
 interface BasePresenter {
     fun onDestroy()

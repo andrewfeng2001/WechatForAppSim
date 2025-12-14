@@ -27,8 +27,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.example.wechat_sim.model.Contact
-import com.example.wechat_sim.mvp.contact.ContactContract
-import com.example.wechat_sim.mvp.contact.ContactPresenter
+import com.example.wechat_sim.presentation.contact.ContactContract
+import com.example.wechat_sim.presentation.contact.ContactPresenter
 import com.example.wechat_sim.repository.DataRepository
 import com.example.wechat_sim.ui.contactdetails.ContactDetailsActivity
 import kotlinx.coroutines.launch
@@ -50,7 +50,7 @@ fun ContactTab() {
 
     val view = remember {
         object : ContactContract.View {
-            override fun showContactList(contacts: List<com.example.wechat_sim.mvp.contact.ContactGroup>) {
+            override fun showContactList(contacts: List<com.example.wechat_sim.presentation.contact.ContactGroup>) {
                 // 只显示好友，按字母分组
                 val allContacts = contacts.flatMap { it.contacts }
                 val friendsOnly = allContacts.filter { it.isFriend }

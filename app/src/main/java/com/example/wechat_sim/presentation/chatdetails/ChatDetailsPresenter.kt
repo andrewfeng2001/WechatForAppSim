@@ -1,4 +1,4 @@
-package com.example.wechat_sim.mvp.chatdetails
+package com.example.wechat_sim.presentation.chatdetails
 
 import com.example.wechat_sim.model.Contact
 import com.example.wechat_sim.model.Message

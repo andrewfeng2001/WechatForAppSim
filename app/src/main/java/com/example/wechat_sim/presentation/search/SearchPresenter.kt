@@ -1,4 +1,4 @@
-package com.example.wechat_sim.mvp.search
+package com.example.wechat_sim.presentation.search
 
 import com.example.wechat_sim.model.Contact
 import com.example.wechat_sim.model.ChatRoom
