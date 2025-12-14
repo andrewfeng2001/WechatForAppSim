@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    namespace = "com.example.fakewechat"
+    namespace = "com.example.wechat_sim"
     compileSdk = 36
     buildToolsVersion = "36.0.0"
 
     defaultConfig {
-        applicationId = "com.example.fakewechat"
+        applicationId = "com.example.wechat_sim"
         minSdk = 33
         targetSdk = 33
         versionCode = 1

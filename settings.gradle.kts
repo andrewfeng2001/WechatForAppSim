@@ -29,5 +29,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "FakeWechat"
+rootProject.name = "WeChat"
 include(":app")

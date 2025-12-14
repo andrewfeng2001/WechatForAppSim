@@ -1,0 +1,28 @@
+package com.example.wechat_sim.mvp.search
+
+import com.example.wechat_sim.model.Contact
+import com.example.wechat_sim.model.ChatRoom
+import com.example.wechat_sim.mvp.BaseView
+import com.example.wechat_sim.mvp.BasePresenter
+
+// 搜索结果的封装类
+data class SearchResult(
+    val contact: Contact? = null,
+    val chatRoom: ChatRoom? = null
+) {
+    val isContact: Boolean get() = contact != null
+    val isChatRoom: Boolean get() = chatRoom != null
+}
+
+interface SearchContract {
+
+    interface View : BaseView {
+        fun showSearchResults(results: List<SearchResult>)
+    }
+
+    interface Presenter : BasePresenter {
+        fun attachView(view: View)
+        fun detachView()
+        fun searchContacts(query: String)
+    }
+}
