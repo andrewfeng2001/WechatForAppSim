@@ -1,8 +1,8 @@
 package com.example.wechat_sim.presentation.search
 
-import com.example.wechat_sim.model.Contact
-import com.example.wechat_sim.model.ChatRoom
-import com.example.wechat_sim.repository.DataRepository
+import com.example.wechat_sim.data.model.Contact
+import com.example.wechat_sim.data.model.ChatRoom
+import com.example.wechat_sim.data.repository.DataRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job

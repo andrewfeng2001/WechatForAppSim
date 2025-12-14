@@ -1,7 +1,7 @@
 package com.example.wechat_sim.presentation.moments
 
-import com.example.wechat_sim.model.MomentsPost
-import com.example.wechat_sim.model.Contact
+import com.example.wechat_sim.data.model.MomentsPost
+import com.example.wechat_sim.data.model.Contact
 import com.example.wechat_sim.presentation.BaseView
 import com.example.wechat_sim.presentation.BasePresenter
 

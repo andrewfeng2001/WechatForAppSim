@@ -1,7 +1,7 @@
 package com.example.wechat_sim.common.utils
 
 import android.content.Context
-import com.example.wechat_sim.repository.DataRepository
+import com.example.wechat_sim.data.repository.DataRepository
 import kotlinx.coroutines.runBlocking
 
 /**

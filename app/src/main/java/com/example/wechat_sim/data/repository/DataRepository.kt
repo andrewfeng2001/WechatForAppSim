@@ -1,6 +1,6 @@
-package com.example.wechat_sim.repository
+package com.example.wechat_sim.data.repository
 
-import com.example.wechat_sim.model.*
+import com.example.wechat_sim.data.model.*
 import android.content.Context
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

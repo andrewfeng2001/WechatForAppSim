@@ -1,7 +1,7 @@
 package com.example.wechat_sim.presentation.moments
 
-import com.example.wechat_sim.repository.DataRepository
-import com.example.wechat_sim.model.Comment
+import com.example.wechat_sim.data.repository.DataRepository
+import com.example.wechat_sim.data.model.Comment
 import kotlinx.coroutines.*
 import java.time.LocalDateTime
 

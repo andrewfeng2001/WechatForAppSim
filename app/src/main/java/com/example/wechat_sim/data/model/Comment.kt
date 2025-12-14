@@ -1,4 +1,4 @@
-package com.example.wechat_sim.model
+package com.example.wechat_sim.data.model
 
 import java.time.LocalDateTime
 

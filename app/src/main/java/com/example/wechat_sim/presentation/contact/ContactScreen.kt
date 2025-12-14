@@ -1,4 +1,4 @@
-package com.example.wechat_sim.ui.contact
+package com.example.wechat_sim.presentation.contact
 
 import android.content.Intent
 import androidx.compose.foundation.background
@@ -36,7 +36,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ContactTab(navController: NavController) {
+fun ContactScreen(navController: NavController) {
     val context = LocalContext.current
     val repository = remember { DataRepository(context) }
     val presenter = remember { ContactPresenter(repository) }

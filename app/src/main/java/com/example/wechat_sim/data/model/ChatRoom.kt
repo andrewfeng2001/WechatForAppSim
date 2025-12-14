@@ -1,4 +1,4 @@
-package com.example.wechat_sim.model
+package com.example.wechat_sim.data.model
 
 /**
  * 微信群聊数据类

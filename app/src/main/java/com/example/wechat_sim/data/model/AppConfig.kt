@@ -1,4 +1,4 @@
-package com.example.wechat_sim.model
+package com.example.wechat_sim.data.model
 
 /**
  * 应用配置和全局状态数据类

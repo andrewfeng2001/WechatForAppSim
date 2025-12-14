@@ -29,12 +29,12 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
-import com.example.wechat_sim.model.Contact
-import com.example.wechat_sim.model.ChatRoom
+import com.example.wechat_sim.data.model.Contact
+import com.example.wechat_sim.data.model.ChatRoom
 import com.example.wechat_sim.presentation.search.SearchContract
 import com.example.wechat_sim.presentation.search.SearchPresenter
 import com.example.wechat_sim.presentation.search.SearchResult
-import com.example.wechat_sim.repository.DataRepository
+import com.example.wechat_sim.data.repository.DataRepository
 import com.example.wechat_sim.ui.theme.FakeWeChatTheme
 import com.example.wechat_sim.ui.contactdetails.ContactDetailsActivity
 import com.example.wechat_sim.ui.chatdetails.ChatDetailsActivity

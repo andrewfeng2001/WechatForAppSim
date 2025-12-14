@@ -22,15 +22,20 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.wechat_sim.presentation.main.MainContract
 import com.example.wechat_sim.presentation.main.MainPresenter
-import com.example.wechat_sim.repository.DataRepository
+import com.example.wechat_sim.data.repository.DataRepository
 import com.example.wechat_sim.ui.theme.FakeWeChatTheme
-import com.example.wechat_sim.ui.chat.ChatTab
-import com.example.wechat_sim.ui.contact.ContactTab
-import com.example.wechat_sim.ui.discover.DiscoverTab
-import com.example.wechat_sim.ui.me.MeTab
-import com.example.wechat_sim.ui.search.SearchActivity
+import com.example.wechat_sim.presentation.chat.ChatScreen
+import com.example.wechat_sim.presentation.contact.ContactScreen
+import com.example.wechat_sim.presentation.discover.DiscoverScreen
+import com.example.wechat_sim.presentation.me.MeScreen
+import com.example.wechat_sim.presentation.search.SearchScreen
+import com.example.wechat_sim.presentation.moments.MomentsScreen
+import com.example.wechat_sim.navigation.Routes
 
 class MainActivity : ComponentActivity(), MainContract.View {
 
@@ -64,6 +69,7 @@ class MainActivity : ComponentActivity(), MainContract.View {
     @Composable
     private fun MainScreen() {
         var selectedTabIndex by remember { mutableIntStateOf(0) }
+        val navController = rememberNavController()
 
         Scaffold(
             modifier = Modifier.fillMaxSize(),
@@ -83,7 +89,7 @@ class MainActivity : ComponentActivity(), MainContract.View {
                             if (selectedTabIndex == 0 || selectedTabIndex == 1 || selectedTabIndex == 2) {
                                 // 只在微信/通讯录/发现3个页面显示搜索图标
                                 IconButton(onClick = {
-                                    startActivity(Intent(this@MainActivity, SearchActivity::class.java))
+                                    navController.navigate(Routes.SEARCH)
                                 }) {
                                     Icon(
                                         imageVector = Icons.Default.Search,
@@ -117,7 +123,49 @@ class MainActivity : ComponentActivity(), MainContract.View {
                 when {
                     isLoading -> LoadingScreen()
                     errorMessage != null -> ErrorScreen(errorMessage!!)
-                    showMainContent -> MainContent(selectedTabIndex)
+                    showMainContent -> {
+                        // 主要内容（Tab导航）
+                        MainContent(selectedTabIndex, navController)
+
+                        // 导航覆盖层（用于全屏导航）
+                        NavHost(
+                            navController = navController,
+                            startDestination = "main"
+                        ) {
+                            // 主页面不需要在这里定义，因为由MainContent处理
+                            composable("main") { /* 空实现，永远不会被使用 */ }
+
+                            // 搜索页面
+                            composable(Routes.SEARCH) {
+                                SearchScreen(navController = navController)
+                            }
+
+                            // 朋友圈页面
+                            composable(Routes.MOMENTS) {
+                                MomentsScreen(navController = navController)
+                            }
+
+                            // 联系人详情页面
+                            composable(Routes.CONTACT_DETAILS) { backStackEntry ->
+                                val contactId = backStackEntry.arguments?.getString("contactId") ?: ""
+                                com.example.wechat_sim.presentation.contactdetails.ContactDetailsScreen(
+                                    navController = navController,
+                                    contactUserId = contactId
+                                )
+                            }
+
+                            // 聊天详情页面
+                            composable(Routes.CHAT_DETAILS) { backStackEntry ->
+                                val chatId = backStackEntry.arguments?.getString("chatId") ?: ""
+                                val isGroup = backStackEntry.arguments?.getString("isGroup")?.toBoolean() ?: false
+                                com.example.wechat_sim.presentation.chatdetails.ChatDetailsScreen(
+                                    navController = navController,
+                                    chatId = chatId,
+                                    isGroup = isGroup
+                                )
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -175,33 +223,33 @@ class MainActivity : ComponentActivity(), MainContract.View {
     }
 
     @Composable
-    private fun MainContent(selectedTabIndex: Int) {
+    private fun MainContent(selectedTabIndex: Int, navController: androidx.navigation.NavController) {
         when (selectedTabIndex) {
-            0 -> ChatTabContent()
-            1 -> ContactTabContent()
-            2 -> DiscoverTabContent()
-            3 -> MeTabContent()
+            0 -> ChatTabContent(navController)
+            1 -> ContactTabContent(navController)
+            2 -> DiscoverTabContent(navController)
+            3 -> MeTabContent(navController)
         }
     }
 
     @Composable
-    private fun ChatTabContent() {
-        ChatTab()
+    private fun ChatTabContent(navController: androidx.navigation.NavController) {
+        ChatScreen(navController = navController)
     }
 
     @Composable
-    private fun ContactTabContent() {
-        ContactTab()
+    private fun ContactTabContent(navController: androidx.navigation.NavController) {
+        ContactScreen(navController = navController)
     }
 
     @Composable
-    private fun DiscoverTabContent() {
-        DiscoverTab()
+    private fun DiscoverTabContent(navController: androidx.navigation.NavController) {
+        DiscoverScreen(navController = navController)
     }
 
     @Composable
-    private fun MeTabContent() {
-        MeTab()
+    private fun MeTabContent(navController: androidx.navigation.NavController) {
+        MeScreen(navController = navController)
     }
 
     @Composable

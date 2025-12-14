@@ -1,4 +1,4 @@
-package com.example.wechat_sim.ui.chat
+package com.example.wechat_sim.presentation.chat
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -33,7 +33,7 @@ import androidx.navigation.NavController
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChatTab(navController: NavController) {
+fun ChatScreen(navController: NavController) {
     val context = LocalContext.current
     val repository = remember { DataRepository(context) }
     val presenter = remember { ChatPresenter(repository) }

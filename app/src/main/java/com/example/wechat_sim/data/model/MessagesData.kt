@@ -1,4 +1,4 @@
-package com.example.wechat_sim.model
+package com.example.wechat_sim.data.model
 
 /**
  * 消息数据结构，用于从messages.json加载数据

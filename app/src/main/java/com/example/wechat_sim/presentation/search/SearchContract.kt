@@ -1,7 +1,7 @@
 package com.example.wechat_sim.presentation.search
 
-import com.example.wechat_sim.model.Contact
-import com.example.wechat_sim.model.ChatRoom
+import com.example.wechat_sim.data.model.Contact
+import com.example.wechat_sim.data.model.ChatRoom
 import com.example.wechat_sim.presentation.BaseView
 import com.example.wechat_sim.presentation.BasePresenter
 

@@ -22,23 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.moments.MomentsActivity"
-            android:theme="@style/Theme.WeChat"
-            android:exported="false" />
-        <activity
-            android:name=".ui.contactdetails.ContactDetailsActivity"
-            android:theme="@style/Theme.WeChat"
-            android:exported="false" />
-        <activity
-            android:name=".ui.chatdetails.ChatDetailsActivity"
-            android:theme="@style/Theme.WeChat"
-            android:windowSoftInputMode="adjustResize"
-            android:exported="false" />
-        <activity
-            android:name=".ui.search.SearchActivity"
-            android:theme="@style/Theme.WeChat"
-            android:exported="false" />
     </application>
 
 </manifest>

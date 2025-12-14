@@ -1,4 +1,4 @@
-package com.example.wechat_sim.ui.me
+package com.example.wechat_sim.presentation.me
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.BorderStroke
@@ -32,7 +32,7 @@ import com.example.wechat_sim.data.repository.DataRepository
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MeTab(navController: androidx.navigation.NavController) {
+fun MeScreen(navController: androidx.navigation.NavController) {
     val context = LocalContext.current
     val repository = remember { DataRepository(context) }
     val presenter = remember { MePresenter(repository) }

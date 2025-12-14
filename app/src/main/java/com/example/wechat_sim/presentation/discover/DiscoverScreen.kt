@@ -1,4 +1,4 @@
-package com.example.wechat_sim.ui.discover
+package com.example.wechat_sim.presentation.discover
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -25,7 +25,7 @@ import com.example.wechat_sim.navigation.Routes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DiscoverTab(navController: NavController) {
+fun DiscoverScreen(navController: NavController) {
 
     val discoverGroups = listOf(
         // 第一组：朋友圈

@@ -1,6 +1,6 @@
 package com.example.wechat_sim.presentation.contact
 
-import com.example.wechat_sim.model.Contact
+import com.example.wechat_sim.data.model.Contact
 import com.example.wechat_sim.presentation.BasePresenter
 import com.example.wechat_sim.presentation.BaseView
 

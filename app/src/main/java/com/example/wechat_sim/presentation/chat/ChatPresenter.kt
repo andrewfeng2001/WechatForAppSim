@@ -1,7 +1,7 @@
 package com.example.wechat_sim.presentation.chat
 
-import com.example.wechat_sim.model.Contact
-import com.example.wechat_sim.repository.DataRepository
+import com.example.wechat_sim.data.model.Contact
+import com.example.wechat_sim.data.repository.DataRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -109,7 +109,7 @@ class ChatPresenter(
         }
     }
 
-    private fun formatLastMessage(message: com.example.wechat_sim.model.JsonMessage?, isGroup: Boolean, contacts: List<Contact>): String {
+    private fun formatLastMessage(message: com.example.wechat_sim.data.model.JsonMessage?, isGroup: Boolean, contacts: List<Contact>): String {
         if (message == null) return ""
 
         return when (message.type) {
