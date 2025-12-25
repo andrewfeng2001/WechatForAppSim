@@ -140,57 +140,49 @@ fun ChatDetailsScreen(
         }
     }
 
-    Scaffold(
-        modifier = Modifier.fillMaxSize(),
-        topBar = {
-            TopAppBar(
-                title = {
-                    Text(
-                        text = chatTitle,
-                        color = Color.Black,
-                        fontSize = 18.sp,
-                        fontWeight = FontWeight.Bold
-                    )
-                },
-                navigationIcon = {
-                    IconButton(onClick = { navController.popBackStack() }) {
-                        Icon(
-                            imageVector = Icons.AutoMirrored.Filled.ArrowBack,
-                            contentDescription = "返回",
-                            tint = Color.Black
-                        )
-                    }
-                },
-                actions = {
-                    IconButton(onClick = { presenter.onMenuClicked() }) {
-                        Icon(
-                            imageVector = Icons.Default.MoreVert,
-                            contentDescription = "更多",
-                            tint = Color.Black
-                        )
-                    }
-                },
-                colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = Color.White
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White)
+    ) {
+        // TopAppBar as direct child
+        TopAppBar(
+            title = {
+                Text(
+                    text = chatTitle,
+                    color = Color.Black,
+                    fontSize = 18.sp,
+                    fontWeight = FontWeight.Bold
                 )
-            )
-        },
-        bottomBar = {
-            ChatInputBar(
-                inputText = inputText,
-                onInputTextChange = { inputText = it },
-                onSendMessage = { content ->
-                    if (content.isNotBlank()) {
-                        presenter.onSendMessage(content)
-                    }
+            },
+            navigationIcon = {
+                IconButton(onClick = { navController.popBackStack() }) {
+                    Icon(
+                        imageVector = Icons.AutoMirrored.Filled.ArrowBack,
+                        contentDescription = "返回",
+                        tint = Color.Black
+                    )
                 }
+            },
+            actions = {
+                IconButton(onClick = { presenter.onMenuClicked() }) {
+                    Icon(
+                        imageVector = Icons.Default.MoreVert,
+                        contentDescription = "更多",
+                        tint = Color.Black
+                    )
+                }
+            },
+            colors = TopAppBarDefaults.topAppBarColors(
+                containerColor = Color.White
             )
-        }
-    ) { innerPadding ->
+        )
+
+        // Content area
         Box(
             modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
+                .weight(1f)
+                .fillMaxWidth()
                 .background(Color(0xFFEDEDED))
         ) {
             when {
@@ -225,6 +217,17 @@ fun ChatDetailsScreen(
                 }
             }
         }
+
+        // Bottom input bar
+        ChatInputBar(
+            inputText = inputText,
+            onInputTextChange = { inputText = it },
+            onSendMessage = { content ->
+                if (content.isNotBlank()) {
+                    presenter.onSendMessage(content)
+                }
+            }
+        )
     }
 }
 
@@ -238,9 +241,9 @@ private fun MessagesList(
         state = listState,
         modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = 16.dp),
-        verticalArrangement = Arrangement.spacedBy(8.dp),
-        contentPadding = PaddingValues(vertical = 16.dp)
+            .padding(horizontal = 8.dp),
+        verticalArrangement = Arrangement.spacedBy(2.dp),
+        contentPadding = PaddingValues(vertical = 4.dp)
     ) {
         items(messages) { message ->
             MessageBubble(
@@ -306,7 +309,7 @@ private fun MessageBubble(
                 .background(
                     if (message.isFromSelf) Color(0xFF95EC69) else Color.White
                 )
-                .padding(12.dp)
+                .padding(8.dp)
         ) {
             Column {
                 if (!message.isFromSelf && message.senderName.isNotBlank()) {
@@ -316,7 +319,7 @@ private fun MessageBubble(
                         color = Color.Gray,
                         fontWeight = FontWeight.Medium
                     )
-                    Spacer(modifier = Modifier.height(4.dp))
+                    Spacer(modifier = Modifier.height(1.dp))
                 }
 
                 Text(
@@ -326,7 +329,7 @@ private fun MessageBubble(
                 )
 
                 if (message.formattedTime.isNotBlank()) {
-                    Spacer(modifier = Modifier.height(4.dp))
+                    Spacer(modifier = Modifier.height(1.dp))
                     Text(
                         text = message.formattedTime,
                         fontSize = 10.sp,
@@ -367,14 +370,14 @@ private fun ChatInputBar(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp),
+            .padding(4.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(8.dp),
+                .padding(4.dp),
             verticalAlignment = Alignment.Bottom
         ) {
             // Voice input button
